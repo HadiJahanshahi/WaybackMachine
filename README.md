@@ -1,6 +1,7 @@
 # bug-triage
-This is a temporary repository for the paper submitted to PROMISE'20, and is use for blind submission. After the paper is accepted, all the materials will be moved to the permanent repository.
+This is a repository for the paper `Wayback Machine: A tool to capture the evolutionarybehaviour of the bug reports and their triage process inopen-source software systems`. 
 
+## Folders and their contents 
 The folder `output` includes the output of experiments under different conditions. The folder `scripts` includes all python scripts related to the paper. More details on that is given in the folder's readme. 
 
 Prerequisites:
