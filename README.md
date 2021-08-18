@@ -8,6 +8,14 @@ It includes the bug dependency graph (`BDG`), defined in the paper.
 
 It includes graph operations, e.g., adding or removing arcs and nodes, together with graph related updates, e.g., updating depth, degree, severity, and priority of the bugs in the BDG.
 
+### dat
+It includes all the datasets used in the paper. The datasets are related to the extracted bugs from three software projects, Mozilla, LibreOffice, and EclipseJDT.
+
+### imgs
+It includes the images used in the paper in a vector format.
+
+### simulator
+This folde
 
 The folder `output` includes the output of experiments under different conditions. The folder `scripts` includes all python scripts related to the paper. More details on that is given in the folder's readme. 
 
