@@ -1,12 +1,12 @@
 # Wayback Machine
-This is a repository for the paper `Wayback Machine: A tool to capture the evolutionarybehaviour of the bug reports and their triage process inopen-source software systems`. 
+This is a repository for the paper `Wayback Machine: A tool to capture the evolutionary behavior of the bug reports and their triage process in open-source software systems`. 
 
 ## Folders and their contents 
 
 ### bin
 It includes the bug dependency graph (`BDG`), defined in the paper. 
 
-It includes graph operations, e.g., adding or removing arcs and nodes, together with graph related updates, e.g., updating depth, degree, severity, and priority of the bugs in the BDG.
+It includes graph operations, e.g., adding or removing arcs and nodes, together with graph-related updates, e.g., updating depth, degree, severity, and priority of the bugs in the BDG.
 
 ### dat
 It includes all the datasets used in the paper. The datasets are related to the extracted bugs from three software projects, Mozilla, LibreOffice, and EclipseJDT.
@@ -17,26 +17,26 @@ It includes the images used in the paper in a vector format.
 ### simulator
 This folder contains two important files: `main.py` and `wayback.py`.
 
-*  `wayback.py` codes whole the process of the wayback machine and its elements. The main variables are
+*  `wayback.py` codes the process of the Wayback machine and its elements. The main variables are
   *  `keep_track_of_resolved_bugs` which keeps all the info related to the resolved bugs during the testing phase.
-  *  `track_BDG_info` which keep track of the BDG during the life span of the project.
-  *  `verbose` which defines how to print the output during the running time, e.g.. `nothing`, `some`, or `all` the information should be printed.
+  *  `track_BDG_info` keeps track of the BDG during the life span of the project.
+  *  `verbose` defines how to print the output during the running time, e.g.. `nothing`, `some`, or `all` the information should be printed.
   It has also some important methods, including
   * `acceptable_solving_time` which determines the acceptable solving time based on the IQR.
   * `possible_developers` which finds the list of feasible developers at the end of the training phase.
-  * `fixing_time_calculation` which uses bug infor and evolutionary database to calculate fixing time based on the Costriage paper.
-  * `track_and_assign` which assigns the bugs to proper developers and track the info of the assigned/fixed bug.
-  * `triage` module to apply triage algorithms. Researchers can manipulate this method and add their own triage algorithms to the wayback machine. `DABT` `RABT`, `CosTriage`, `CBR`, `Actual` and `Random` triage are already implemented.
+  * `fixing_time_calculation` which uses bug info and evolutionary database to calculate fixing time according to the Costriage paper.
+  * `track_and_assign` which assigns the bugs to proper developers and tracks the info of the assigned/fixed bug.
+  * `triage` module to apply triage algorithms. Researchers can manipulate this method and add their own triage algorithms to the Wayback Machine. `DABT` `RABT`, `CosTriage`, `CBR`, `Actual` and `Random` triage are already implemented.
   * `prioritization` module to apply prioritization algorithms. Researchers can manipulate this method and add their own prioritization algorithms to the wayback machine. `max_priority` `max_severity`, `cost_estimation`, `priority_estimation`, `cost_priority_estimation`, `max_depth_degree`, `Actual` and `Random` prioritization are already implemented.
 
 
 * `main.py` is needed to run the Wayback Machine. 
-To run the code, this command should be run. 
+To run the code, a sample command might be as follows. 
 
 ```python
 python simulator/main.py --project=Mozilla --resolution=max_depth_degree --n_days=7511 --prioritization_triage=prioritization --verbose=0
 ```
-Regarding the options available for `main.py` file:
+Regarding the options available for the `main.py` file:
   * `--resolution` defines the **strategy/algorithm** to take
   * `project` can be `Mozilla`, `LibreOffice`, or `EclipseJDT`. A user can also extract and add their own ITS database. 
   * `--n_days` defines the number of days from the beginning to the end of the lifespan. Based on our database, it should be 3438 days for LibreOffice,  7511 days for Mozilla, and 
@@ -45,10 +45,10 @@ Regarding the options available for `main.py` file:
   * `verbose` indicates how to print the output and can be either: ```[0, 1, 2, nothing, some, all]```.
 
 
-More details on the simulator is commented on the files.
+More details on the simulator are commented on in the files.
 
 ### utils
-It contains `attention_decoder` for the DeepTriage strategy. `debugger` to search over the variables in case of a bug. `functions` which includes useful, fundemental functions. `prerequisites` which includes all the packages needed to run the wayback machine. `release_dates` that holds the release dates of the projects during their testing phase. If a user wants to add a new project, they have to manually add their release dates here. `report` gives a full report of the wayback machine outputs if needed.
+It contains `attention_decoder` for the DeepTriage strategy. `debugger` to search over the variables in case of a bug. `functions` which includes useful, fundamental functions. `prerequisites` including all the packages needed to run the Wayback Machine. `release_dates` that holds the release dates of the projects during their testing phase. If a user wants to add a new project, they have to manually add the release dates here. `report` gives a full report of the Wayback Machine outputs if needed.
 
 
 ## Prerequisites:
@@ -75,6 +75,6 @@ It contains `attention_decoder` for the DeepTriage strategy. `debugger` to searc
  * plotly
 
 ____________
-The output of each run will be saved in output folder automatically. 
+The output of each run will be saved in the output folder automatically. 
 
 Any questions? Please do not hesitate to contact me: hadi . jahanshahi [at] ryerson.ca
