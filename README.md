@@ -36,10 +36,13 @@ To run the code, this command should be run.
 ```python
 python simulator/main.py --project=Mozilla --resolution=max_depth_degree --n_days=7511 --prioritization_triage=prioritization --verbose=0
 ```
-``--resolution`` defines the **strategy/algorithm** to take, `project` can be `Mozilla`, `LibreOffice`, or `EclipseJDT`. A user can also extract and add their own ITS database. 
-``--n_days`` defines the number of days from the beginning to the end of the lifespan. Based on our database, it should be 3438 days for LibreOffice,  7511 days for Mozilla, and 
-6644 days for EclipseJDT. `prioritization_triage` can be set to either prioritization or triage, based on the resolution selected.
-``verbose`` indicates how to print the output and can be either: ```[0, 1, 2, nothing, some, all]```.
+Regarding the options available for `main.py` file:
+  * `--resolution` defines the **strategy/algorithm** to take
+  * `project` can be `Mozilla`, `LibreOffice`, or `EclipseJDT`. A user can also extract and add their own ITS database. 
+  * `--n_days` defines the number of days from the beginning to the end of the lifespan. Based on our database, it should be 3438 days for LibreOffice,  7511 days for Mozilla, and 
+  6644 days for EclipseJDT.
+  * `prioritization_triage` can be set to either prioritization or triage, based on the resolution selected.
+  * `verbose` indicates how to print the output and can be either: ```[0, 1, 2, nothing, some, all]```.
 
 
 More details on the simulator is commented on the files.
