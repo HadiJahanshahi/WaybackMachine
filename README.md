@@ -11,7 +11,7 @@ It includes graph operations, e.g., adding or removing arcs and nodes, together 
 ### components
 It includes two main classes: **developers** and **bugs**. 
 * `assignee.py` has the `Assignee` class which includes the information of the developers and track the assigned bugs to them and the accuracy of those assignments. It also keeps their LDA experience and the time limit $L$ of them.
-* bug.py has the `Bug` class which includes all the essential information of each bugs, including ID, severity, priority, depth, degree, status, summary, description, fixing time, and so on. It has its methods to track the assigned developer and assignment time, compute the accuracy of the assignment, check the validity of the bugs for assignment based on preprocessing steps in the paper, update its blocking information, and change its status to fixed or reopenned. 
+* `bug.py` has the `Bug` class which includes all the essential information of each bugs, including ID, severity, priority, depth, degree, status, summary, description, fixing time, and so on. It has its methods to track the assigned developer and assignment time, compute the accuracy of the assignment, check the validity of the bugs for assignment based on preprocessing steps in the paper, update its blocking information, and change its status to fixed or reopenned. 
 
 
 ### dat
