@@ -32,30 +32,24 @@ This folder contains two important files: `main.py` and `wayback.py`.
   * `possible_developers` which finds the list of feasible developers at the end of the training phase.
   * `fixing_time_calculation` which uses bug info and evolutionary database to calculate fixing time according to the Costriage paper.
   * `track_and_assign` which assigns the bugs to proper developers and tracks the info of the assigned/fixed bug.
-  * `triage` module to apply triage algorithms. Researchers can manipulate this method and add their own triage algorithms to the Wayback Machine. `DABT`, `SDABT`, `RABT`, `CosTriage`, `CBR`, `Actual` and `Random` triage are already implemented.
+  * `triage` module to apply triage algorithms. Researchers can manipulate this method and add their own triage algorithms to the Wayback Machine. `DABT` `RABT`, `CosTriage`, `CBR`, `Actual` and `Random` triage are already implemented.
+  * `prioritization` module to apply prioritization algorithms. Researchers can manipulate this method and add their own prioritization algorithms to the wayback machine. `max_priority` `max_severity`, `cost_estimation`, `priority_estimation`, `cost_priority_estimation`, `max_depth_degree`, `Actual` and `Random` prioritization are already implemented.
+
 
 * `main.py` is needed to run the Wayback Machine. 
 To run the code, a sample command might be as follows. 
 
 ```python
-python simulator/main.py --project=LibreOffice --resolution=SDABT --n_days=3438  --verbose=0
+python simulator/main.py --project=Mozilla --resolution=max_depth_degree --n_days=7511 --prioritization_triage=prioritization --verbose=0
 ```
-
-If you want to do parallel runs for testing the hyperparameter of the model $\alpha$, you need to run as follows:
-```python
-python simulator/main.py --project=EclipseJDT --resolution=SDABT --n_days=6644 --alpha_testing=yes --part=1/2
-python simulator/main.py --project=EclipseJDT --resolution=SDABT --n_days=6644 --alpha_testing=yes --part=2/2
-```
-
-Our model is compatible with Python 3.7 and higher.
-
 Regarding the options available for the `main.py` file:
   * `--resolution` defines the **strategy/algorithm** to take
   * `project` can be `Mozilla`, `LibreOffice`, or `EclipseJDT`. A user can also extract and add their own ITS database. 
-  * `--n_days` defines the number of days from the beginning to the end of the lifespan. Based on our database, it should be 3438 days for LibreOffice,  7511 days for Mozilla, and 6644 days for EclipseJDT.
-  * `--verbose` indicates how to print the output and can be either: ```[0, 1, 2, nothing, some, all]```.
-  * `--alpha_testing` is used when you want to test parameter $\alpha$ of the model. It can be: ```[yes, y, True, no, n, False]```.
-  * `--part` is used for parallel running. It is specially used when alpha_testing is True. It should be in the format of #/#. For instance, 1/2 says that run the model for the first half of the options for alpha, (e.g., 0, 0.1, 0.2, 0.3, 0.4, 0.5) and 2/2 will do it for the second half (e.g., 0.6, 0.7, 0.8, 0.9 ,1.0)
+  * `--n_days` defines the number of days from the beginning to the end of the lifespan. Based on our database, it should be 3438 days for LibreOffice,  7511 days for Mozilla, and 
+  6644 days for EclipseJDT.
+  * `prioritization_triage` can be set to either prioritization or triage, based on the resolution selected.
+  * `verbose` indicates how to print the output and can be either: ```[0, 1, 2, nothing, some, all]```.
+
 
 More details on the simulator are commented on in the files.
 
@@ -87,6 +81,6 @@ It contains `attention_decoder` for the DeepTriage strategy. `debugger` to searc
  * plotly
 
 ____________
-The output of each run will be saved in the `dat` folder automatically. 
+The output of each run will be saved in the output folder automatically. 
 
 Any questions? Please do not hesitate to contact me: hadi . jahanshahi [at] ryerson.ca
