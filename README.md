@@ -1,6 +1,8 @@
 # Wayback Machine
 This is a repository for the paper `Wayback Machine: A tool to capture the evolutionary behavior of the bug reports and their triage process in open-source software systems`. A draft of the paper can be found on Arxiv: (https://arxiv.org/pdf/2011.05382.pdf).
 
+The paper is published on Journal of Systems and Software (https://www.sciencedirect.com/science/article/abs/pii/S0164121222000565). 
+
 ## Folders and their contents 
 
 ### bin
